@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
 import '../configs/app_color.dart';
 import '../configs/app_spacing.dart';
+import '../configs/spacing.dart';
 import 'text/label_text_widget.dart';
-
 
 class LabelAndFieldWidget extends StatelessWidget {
   final String? label;
@@ -47,30 +46,26 @@ class LabelAndFieldWidget extends StatelessWidget {
       controller.text = initialValue.toString();
     }
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        if (label != null) LabelTextWidget(label: label),
-        if (label != null) const SizedBox(height: spacingMedium),
-        SizedBox(
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      if (label != null) LabelTextWidget(label: label),
+      if (label != null) const SizedBox(height: spacingMedium),
+      SizedBox(
           child: TextFormField(
               obscureText: obscureText ?? false,
               cursorColor: AppColor.orange,
               decoration: InputDecoration(
-                focusedBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black12), //<-- SEE HERE
-                ),
-                enabledBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black12), //<-- SEE HERE
-                ),
-                suffix: suffix,
-                hintText: hintText,
-                prefixIcon: prefixIcon,
-                suffixIcon: suffixIcon,
-                counterText: "",
-                contentPadding: const EdgeInsets.symmetric(
-                    vertical: 15, horizontal: 15), // Adjust padding as needed
-              ),
+                  focusedBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black12)),
+                  enabledBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black12)),
+                  suffix: suffix,
+                  hintText: hintText,
+                  prefixIcon: prefixIcon,
+                  suffixIcon: suffixIcon,
+                  counterText: "",
+                  contentPadding: const EdgeInsets.symmetric(
+                      vertical: textFormFieldContentPadding,
+                      horizontal: textFormFieldContentPadding)),
               validator: (_) {
                 return null;
               },
@@ -80,10 +75,8 @@ class LabelAndFieldWidget extends StatelessWidget {
               enabled: enabled ?? true,
               autofocus: autofocus ?? false,
               keyboardType: keyboardType,
-              textAlign: TextAlign.start),
-        ),
-        const SizedBox(height: spacingXSmall)
-      ],
-    );
+              textAlign: TextAlign.start)),
+      const SizedBox(height: spacingXSmall)
+    ]);
   }
 }

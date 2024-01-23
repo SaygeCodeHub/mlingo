@@ -8,32 +8,20 @@ class StringConstants {
   static const kVerify = "Verify";
   static const kRegister = "Register";
   static const kSendVerificationLink = "Send Verification Link";
-  static const kOk = "Ok";
-  static const kCancel = "Cancel";
   static const kSuccess = "Success";
   static const kWarning = "Warning";
-  static const kAdd = "Add";
   static const kSomethingWentWrong = "Something went wrong";
   static const kLogin = "Login";
-
-
-  //General
+  static const kExampleGmail = "Eg.Johndoe@gmail.com";
+  static const kEnterYourPassword = "Enter Your Password";
+  static const kTranslations = "Translations";
+  static const kCreateAccount = "Create an Account..";
+  static const kAlreadyHaveAnAccount = "Already Have An Account..";
+  static const kForgotPassword = "Forgot Password?";
+  static const kNotRegisteredYet = "Not Registered Yet?";
+  static const kAdd = "ADD";
+  static const kOk = "Ok";
+  static const kCancel = "Cancel";
   static const kNext = 'Next';
 
-  // Company
-  static const kCompanyName = 'Company Name';
-  static const kSaveCompany = 'Save Company';
-  static const kCompanyGSTNumber = 'Company GST';
-  static const kCompanyPanNumber = 'Company Pan Number';
-  static const kCompanyAddress = 'Company Pan Number';
-  static const kCompanyBranchName = 'Branch Number';
-  static const kLatLong = 'Company Latitude & Longitude';
-
-  //Employees
-
-  static const kAddEmployee = 'Add Employee';
-  static const kInviteMember = 'Invite a team member';
-  static const kAssignRole = 'Assign Role';
-  static const kSlideToClockIn = 'Slide to ClockIn';
-  static const kSlideToClockOut = 'Slide to ClockOut';
 }

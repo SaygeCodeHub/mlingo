@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mlingo/configs/app_color.dart';
+import 'package:mlingo/configs/new_app_theme.dart';
+import 'package:mlingo/utils/constants/string_constants.dart';
+import 'package:mlingo/widgets/primary_button.dart';
+import '../../configs/app_dimensions.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -40,8 +44,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
     return Scaffold(
         backgroundColor: AppColor.white,
         body: Padding(
-            padding:
-                const EdgeInsets.only(left: 17, right: 17, bottom: 10, top: 10),
+            padding: const EdgeInsets.only(
+                left: kDashboardHorizontalPadding,
+                right: kDashboardHorizontalPadding,
+                bottom: kDashboardVerticalPadding,
+                top: kDashboardVerticalPadding),
             child: LayoutBuilder(builder: (context, constraints) {
               return SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
@@ -58,61 +65,44 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     color: AppColor.white,
                                     onPressed: () {},
                                     icon: const Icon(CupertinoIcons.back,
-                                        size: 25, color: AppColor.darkBlue)),
-                              const Text('Translations',
-                                  style: TextStyle(
-                                      color: AppColor.darkBlue,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold)),
+                                        size: kBackIconSize,
+                                        color: AppColor.darkBlue)),
+                              Text(StringConstants.kTranslations,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .dataTableNameTextStyle
+                                      .copyWith(fontWeight: FontWeight.w900)),
                               const Spacer(),
-                              ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      backgroundColor: AppColor.lightBlue,
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(5)),
-                                      minimumSize: const Size(130, 50)),
+                              PrimaryButton(
                                   onPressed: () {},
-                                  child: const Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Icon(Icons.add,
-                                            color: AppColor.white, size: 17),
-                                        Text('ADD',
-                                            style: TextStyle(
-                                                color: AppColor.white,
-                                                fontWeight: FontWeight.bold))
-                                      ]))
+                                  buttonTitle: StringConstants.kAdd,
+                                  buttonWidth: kAddButtonWidth)
                             ]),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: kGeneralSizedBoxHeight),
                         Container(
-                            width: 2000,
+                            width: kDataTableContainerWidth,
                             decoration: BoxDecoration(
                                 color: AppColor.white,
-                                border:
-                                    Border.all(width: 1, color: Colors.black12),
-                                borderRadius:
-                                    const BorderRadius.all(Radius.circular(5))),
+                                border: Border.all(
+                                    width: kContainerBorderWidth,
+                                    color: Colors.black12),
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(kCircularRadius))),
                             child: SingleChildScrollView(
                                 physics: const BouncingScrollPhysics(),
                                 child: Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 8, right: 8, bottom: 8),
+                                        left: kVerticalPadding,
+                                        right: kVerticalPadding,
+                                        bottom: kVerticalPadding),
                                     child: DataTable(
-                                        dataTextStyle: const TextStyle(
-                                            fontWeight: FontWeight.w700,
-                                            color: Colors.black54,
-                                            fontSize: 13),
-                                        headingTextStyle: const TextStyle(
-                                            fontFamily: 'Open Sans',
-                                            fontWeight: FontWeight.bold,
-                                            color: AppColor.darkBlue,
-                                            fontSize: 15),
+                                        dataTextStyle: Theme.of(context)
+                                            .textTheme
+                                            .tableDataTextStyle,
+                                        headingTextStyle: Theme.of(context)
+                                            .textTheme
+                                            .dataTableHeadingTextStyle,
                                         showCheckboxColumn: true,
-                                        checkboxHorizontalMargin: 20,
                                         headingRowColor: MaterialStateProperty
                                             .resolveWith<Color>(
                                                 (Set<MaterialState> states) {
@@ -123,7 +113,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                           }
                                           return AppColor.white;
                                         }),
-                                        dividerThickness: 0.5,
+                                        dividerThickness: kDividerThickness,
                                         columns: createDataColumns(columnNames),
                                         rows: List.generate(10, (index) {
                                           return DataRow(

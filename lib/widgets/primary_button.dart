@@ -27,18 +27,17 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
           shape: shape ??
               RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(kCircularRadius)),
-          backgroundColor: backgroundColor ?? AppColor.darkBlue,
-          minimumSize: Size(buttonWidth ?? double.maxFinite, 50)),
+          backgroundColor: backgroundColor ?? AppColor.lightBlue,
+          minimumSize: Size(buttonWidth ?? double.maxFinite, kElevatedButtonHeight)),
       child: FittedBox(
           child: Text(buttonTitle,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.labelTextStyle.copyWith(
+              style: Theme.of(context).textTheme.primaryButtonTextStyle.copyWith(
                   fontWeight: FontWeight.w700))),
     );
   }

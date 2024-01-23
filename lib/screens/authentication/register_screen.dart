@@ -20,40 +20,31 @@ class RegisterScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const SizedBox(height: spacingBetweenTextFieldAndButton),
-                      Row(
-                        children: [
-                          Expanded(
+                      Row(children: [
+                        Expanded(
                             child: LabelAndFieldWidget(
                                 label: StringConstants.kFirstName,
-                                onTextFieldChanged: (value) {
-                                }),
-                          ),
-                          const SizedBox(width: spacingSmall),
-                          Expanded(
+                                onTextFieldChanged: (value) {})),
+                        const SizedBox(width: spacingSmall),
+                        Expanded(
                             child: LabelAndFieldWidget(
                                 label: StringConstants.kLastName,
-                                onTextFieldChanged: (value) {
-                                }),
-                          ),
-                        ],
-                      ),
+                                onTextFieldChanged: (value) {}))
+                      ]),
                       const SizedBox(height: spacingBetweenTextFields),
                       LabelAndFieldWidget(
                           label: StringConstants.kEmailAddress,
-                          onTextFieldChanged: (value) {
-                          }),
+                          onTextFieldChanged: (value) {}),
                       const SizedBox(height: spacingBetweenTextFields),
                       LabelAndFieldWidget(
                           label: StringConstants.kMobileNumber,
-                          onTextFieldChanged: (value) {
-                          }),
+                          onTextFieldChanged: (value) {}),
                       const SizedBox(height: spacingBetweenTextFields),
                       LabelAndFieldWidget(
                           label: StringConstants.kPassword,
-                          onTextFieldChanged: (value) {
-                          },
+                          onTextFieldChanged: (value) {},
                           obscureText: true),
-                      const SizedBox(height: spacingBetweenTextFieldAndButton),
+                      const SizedBox(height: spacingBetweenTextFields),
                       const RegisterButton()
                     ]))));
   }

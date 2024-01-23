@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'app_color.dart';
 import 'app_dimensions.dart';
 
@@ -65,6 +64,11 @@ extension AppTextTheme on TextTheme {
         fontSize: 16, color: AppColor.black, fontWeight: FontWeight.w600);
   }
 
+  TextStyle get primaryButtonTextStyle {
+    return const TextStyle(
+        fontSize: 16, color: AppColor.white, fontWeight: FontWeight.w700);
+  }
+
   TextStyle get moduleHeadingTextStyle {
     return const TextStyle(
         fontSize: 18, color: AppColor.darkBlue, fontWeight: FontWeight.w600);
@@ -97,6 +101,26 @@ extension AppTextTheme on TextTheme {
   TextStyle get userNameTextStyle {
     return const TextStyle(
         fontSize: 16, color: AppColor.black, fontWeight: FontWeight.w500);
+  }
+
+  TextStyle get authenticationScreenTextStyles {
+    return const TextStyle(
+        color: AppColor.black, fontWeight: FontWeight.w700, fontSize: 15);
+  }
+
+  TextStyle get dataTableHeadingTextStyle {
+    return const TextStyle(
+        fontSize: 15, color: AppColor.darkBlue, fontWeight: FontWeight.bold);
+  }
+
+  TextStyle get dataTableNameTextStyle {
+    return const TextStyle(
+        fontSize: 20, color: AppColor.darkBlue, fontWeight: FontWeight.bold);
+  }
+
+  TextStyle get tableDataTextStyle {
+    return const TextStyle(
+        color: Colors.black54, fontWeight: FontWeight.w700, fontSize: 13);
   }
 
   TextStyle get drawerModuleTextStyle {
