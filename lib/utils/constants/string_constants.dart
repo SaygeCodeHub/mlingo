@@ -23,5 +23,4 @@ class StringConstants {
   static const kOk = "Ok";
   static const kCancel = "Cancel";
   static const kNext = 'Next';
-
 }

@@ -44,7 +44,8 @@ InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
     ),
     filled: true,
     isDense: true,
-    contentPadding: const EdgeInsets.symmetric(horizontal: inputDecorationHPadding, vertical: inputDecorationVPadding),
+    contentPadding: const EdgeInsets.symmetric(
+        horizontal: inputDecorationHPadding, vertical: inputDecorationVPadding),
     fillColor: AppColor.lightGrey,
     focusedErrorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(kCircularRadius),

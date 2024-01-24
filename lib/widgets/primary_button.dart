@@ -33,12 +33,15 @@ class PrimaryButton extends StatelessWidget {
               RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(kCircularRadius)),
           backgroundColor: backgroundColor ?? AppColor.lightBlue,
-          minimumSize: Size(buttonWidth ?? double.maxFinite, kElevatedButtonHeight)),
+          minimumSize:
+              Size(buttonWidth ?? double.maxFinite, kElevatedButtonHeight)),
       child: FittedBox(
           child: Text(buttonTitle,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.primaryButtonTextStyle.copyWith(
-                  fontWeight: FontWeight.w700))),
+              style: Theme.of(context)
+                  .textTheme
+                  .primaryButtonTextStyle
+                  .copyWith(fontWeight: FontWeight.w700))),
     );
   }
 }
