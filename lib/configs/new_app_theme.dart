@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mlingo/configs/spacing.dart';
 import 'app_color.dart';
 import 'app_dimensions.dart';
 
@@ -43,7 +44,7 @@ InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
     ),
     filled: true,
     isDense: true,
-    contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
+    contentPadding: const EdgeInsets.symmetric(horizontal: inputDecorationHPadding, vertical: inputDecorationVPadding),
     fillColor: AppColor.lightGrey,
     focusedErrorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(kCircularRadius),
