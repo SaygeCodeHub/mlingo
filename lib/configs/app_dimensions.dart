@@ -1,0 +1,13 @@
+const double kCardRadius = 12;
+const double kCircularRadius = 5;
+const double kVerticalPadding = 8;
+const double kAddButtonWidth = 100;
+const double kDataTableContainerWidth = 2000;
+const double kGeneralSizedBoxHeight = 10.0;
+const double kContainerBorderWidth = 1;
+const double kDividerThickness = 0.5;
+const double kDashboardHorizontalPadding = 20;
+const double kDashboardVerticalPadding = 10;
+const double kBackIconSize = 25;
+const double kTextFormFieldPadding = 15;
+const double kElevatedButtonHeight = 50;
