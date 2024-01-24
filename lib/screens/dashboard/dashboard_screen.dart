@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mlingo/configs/app_color.dart';
 import 'package:mlingo/configs/new_app_theme.dart';
@@ -61,17 +60,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               if (constraints.maxWidth > 600)
-                                IconButton(
-                                    color: AppColor.white,
-                                    onPressed: () {},
-                                    icon: const Icon(CupertinoIcons.back,
-                                        size: kBackIconSize,
-                                        color: AppColor.darkBlue)),
-                              Text(StringConstants.kTranslations,
+                              Text(StringConstants.kMlingo,
                                   style: Theme.of(context)
                                       .textTheme
                                       .dataTableNameTextStyle
-                                      .copyWith(fontWeight: FontWeight.w900)),
+                                      .copyWith(fontFamily: "Urbanist",fontWeight: FontWeight.w900)),
                               const Spacer(),
                               PrimaryButton(
                                   onPressed: () {},

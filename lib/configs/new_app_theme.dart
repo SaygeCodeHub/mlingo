@@ -90,16 +90,6 @@ extension AppTextTheme on TextTheme {
         fontSize: 12, color: AppColor.darkBlue, fontWeight: FontWeight.w300);
   }
 
-  TextStyle get cardMobileValueTextStyle {
-    return const TextStyle(
-        fontSize: 14, color: AppColor.darkBlue, fontWeight: FontWeight.w800);
-  }
-
-  TextStyle get cardMobileHeadingTextStyle {
-    return const TextStyle(
-        fontSize: 12, color: AppColor.darkBlue, fontWeight: FontWeight.w600);
-  }
-
   TextStyle get userNameTextStyle {
     return const TextStyle(
         fontSize: 16, color: AppColor.black, fontWeight: FontWeight.w500);
@@ -117,7 +107,11 @@ extension AppTextTheme on TextTheme {
 
   TextStyle get dataTableNameTextStyle {
     return const TextStyle(
-        fontSize: 20, color: AppColor.darkBlue, fontWeight: FontWeight.bold);
+      fontFamily: "Urbanist",
+      fontWeight: FontWeight.w900,
+      fontSize: 30,
+      color: AppColor.darkBlue,
+    );
   }
 
   TextStyle get tableDataTextStyle {
@@ -128,11 +122,6 @@ extension AppTextTheme on TextTheme {
   TextStyle get drawerModuleTextStyle {
     return const TextStyle(
         fontSize: 14, color: AppColor.black, fontWeight: FontWeight.w500);
-  }
-
-  TextStyle get buttonTextStyle {
-    return const TextStyle(
-        fontSize: 18, color: AppColor.white, fontWeight: FontWeight.w700);
   }
 
   TextStyle get slideActionTextStyle {

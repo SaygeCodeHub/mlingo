@@ -1,5 +1,6 @@
 class StringConstants {
   static const kFirstName = 'First Name';
+  static const kMlingo = 'Mlingo';
   static const kLastName = 'Last Name';
   static const kEmailAddress = 'Email';
   static const kMobileNumber = 'Mobile Number';
