@@ -128,4 +128,34 @@ extension AppTextTheme on TextTheme {
     return const TextStyle(
         fontSize: 20, fontWeight: FontWeight.w700, color: Colors.black38);
   }
+
+  TextStyle get formHeadingTextStyle {
+    return const TextStyle(
+      fontSize: 17, fontWeight: FontWeight.w700, color: AppColor.darkBlue, fontFamily: "Urbanist");
+  }
+
+  TextStyle get textFieldLabelTextStyle {
+    return const TextStyle(
+        fontSize: 14, color: AppColor.darkBlue, fontWeight: FontWeight.w700,fontFamily: "Urbanist");
+  }
+
+  TextStyle get statusTextTextStyle {
+    return const TextStyle(
+        color: AppColor.darkBlue,fontWeight: FontWeight.w700,fontFamily: "Urbanist",fontSize: 13);
+  }
+
+  TextStyle get submitButtonTextStyle {
+    return const TextStyle(
+        fontFamily:"Urbanist",fontSize: 13,color: AppColor.darkBlue,fontWeight: FontWeight.w700);
+  }
+
+  TextStyle get mlingoTextStyle {
+    return const TextStyle(
+      fontFamily: "Urbanist",
+      fontWeight: FontWeight.w900,
+      fontSize: 30,
+      color: AppColor.darkBlue,
+    );
+  }
+
 }
