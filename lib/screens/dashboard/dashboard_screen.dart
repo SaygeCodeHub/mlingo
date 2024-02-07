@@ -60,14 +60,22 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               if (constraints.maxWidth > 600)
-                              Text(StringConstants.kMlingo,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .dataTableNameTextStyle
-                                      .copyWith(fontFamily: "Urbanist",fontWeight: FontWeight.w900)),
+                                Text(StringConstants.kMlingo,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .dataTableNameTextStyle
+                                        .copyWith(
+                                            fontFamily: "Urbanist",
+                                            fontWeight: FontWeight.w900)),
                               const Spacer(),
                               PrimaryButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    // Navigator.push(
+                                    //     context,
+                                    //     MaterialPageRoute(
+                                    //         builder: (context) =>
+                                    //             AddKeyForm()));
+                                  },
                                   buttonTitle: StringConstants.kAdd,
                                   buttonWidth: kAddButtonWidth)
                             ]),

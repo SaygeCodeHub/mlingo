@@ -24,4 +24,19 @@ class StringConstants {
   static const kOk = "Ok";
   static const kCancel = "Cancel";
   static const kNext = 'Next';
+  static const kAddKey = 'Add Key';
+  static const kKey = 'Key';
+  static const kHindi = 'Hindi';
+  static const kHindiText = 'Hindi Text';
+  static const kEnglish = 'English';
+  static const kEnglishText = 'English Text';
+  static const kGerman = 'German';
+  static const kGermanText = 'German Text';
+  static const kStatus = 'Status';
+  static const kSubmit = 'Submit';
+  static const kAddNewKey = 'Add New Key';
+  static const kNewLang = 'Add Language';
+  static const kAddNewLangTitle = 'Language';
+  static const kNewLangValue = 'Value';
+  static const kAddValue  = 'Add Value';
 }
