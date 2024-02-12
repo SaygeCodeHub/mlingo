@@ -1,9 +1,15 @@
+import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mlingo/bloc/dashboard/dashboard_bloc.dart';
 import 'package:mlingo/configs/app_color.dart';
 import 'package:mlingo/configs/new_app_theme.dart';
+import 'package:mlingo/screens/translation_form/key_form_screen.dart';
 import 'package:mlingo/utils/constants/string_constants.dart';
 import 'package:mlingo/widgets/primary_button.dart';
+
 import '../../configs/app_dimensions.dart';
+import '../../configs/spacing.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -13,126 +19,141 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  List<bool> selectedRows = List.generate(100, (index) => false);
-  List<String> cellValues = [
-    'index',
-    "Active",
-    "Text99999999999input",
-    "Text Input",
-    "Text Input",
-  ];
-
-  List<DataCell> createDataCells(List<String> values) {
-    return values.map((value) {
-      return DataCell(Text(value), onTap: () {
-        Navigator.pop(context);
-      });
-    }).toList();
-  }
-
-  List<String> columnNames = ['Key', 'Status', 'English', 'Hindi', 'German'];
-
-  List<DataColumn> createDataColumns(List<String> names) {
-    return names.map((name) {
-      return DataColumn(label: Text(name));
-    }).toList();
-  }
-
   @override
   Widget build(BuildContext context) {
+    context.read<DashboardBloc>().add(const FetchDashboard());
     return Scaffold(
         backgroundColor: AppColor.white,
         body: Padding(
-            padding: const EdgeInsets.only(
-                left: kDashboardHorizontalPadding,
-                right: kDashboardHorizontalPadding,
-                bottom: kDashboardVerticalPadding,
-                top: kDashboardVerticalPadding),
-            child: LayoutBuilder(builder: (context, constraints) {
-              return SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Column(
+            padding: const EdgeInsets.symmetric(
+                horizontal: kDashboardHorizontalPadding,
+                vertical: kDashboardVerticalPadding),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              if (constraints.maxWidth > 600)
-                                Text(StringConstants.kMlingo,
+                        Text(StringConstants.kMlingo,
+                            style: Theme.of(context)
+                                .textTheme
+                                .dataTableNameTextStyle
+                                .copyWith(fontWeight: FontWeight.w900)),
+                        const Spacer(),
+                        PrimaryButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          const AddNewKey(
+                                            isEdit: false,
+                                          )));
+                            },
+                            buttonTitle: StringConstants.kAdd,
+                            buttonWidth: kAddButtonWidth)
+                      ]),
+                  const SizedBox(height: kGeneralSizedBoxHeight),
+                  BlocBuilder<DashboardBloc, DashboardState>(
+                      builder: (context, state) {
+                    if (state is DashboardFetched) {
+                      if (state.fetchDashboardModel.data.isNotEmpty) {
+                        return Expanded(
+                            child: DataTable2(
+                                minWidth: kMinWidthDataTable,
+                                isVerticalScrollBarVisible: true,
+                                columnSpacing: kColumnSpacing,
+                                fixedLeftColumns: 1,
+                                fixedCornerColor: Colors.white,
+                                fixedColumnsColor: Colors.white,
+                                decoration: BoxDecoration(
+                                    color: AppColor.white,
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(kCircularRadius)),
+                                    border: Border.all(color: Colors.black12)),
+                                dataTextStyle: Theme.of(context)
+                                    .textTheme
+                                    .tableDataTextStyle,
+                                headingTextStyle: Theme.of(context)
+                                    .textTheme
+                                    .dataTableHeadingTextStyle,
+                                showCheckboxColumn: true,
+                                dividerThickness: kDividerThickness,
+                                columns: List.generate(
+                                    state.fetchDashboardModel.data[0].keys.length,
+                                    (index) {
+                                  return DataColumn2(
+                                      label: Text(
+                                          state.fetchDashboardModel.data[0].keys
+                                              .toList()[index],
+                                          softWrap: true));
+                                }),
+                                rows: List.generate(
+                                    state.fetchDashboardModel.data.length,
+                                    (index) => DataRow2(
+                                        onTap: () {
+                                          AddNewKey.addNewKeyMap = {
+                                            "key": state.fetchDashboardModel
+                                                .data[index]["key"],
+                                            "translations": [
+                                              {
+                                                "language": "English",
+                                                "translation": state
+                                                    .fetchDashboardModel
+                                                    .data[index]["English"]
+                                              },
+                                              {
+                                                "language": "German",
+                                                "translation": state
+                                                    .fetchDashboardModel
+                                                    .data[index]["German"]
+                                              },
+                                              {
+                                                "language": "Hindi",
+                                                "translation": state
+                                                    .fetchDashboardModel
+                                                    .data[index]["Hindi"]
+                                              },
+                                            ]
+                                          };
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute<void>(
+                                                  builder:
+                                                      (BuildContext context) =>
+                                                          const AddNewKey(
+                                                            isEdit: true,
+                                                          )));
+                                        },
+                                        cells: List.generate(
+                                            state.fetchDashboardModel.data[0]
+                                                .keys.length,
+                                            (cellIndex) => DataCell(Text(
+                                                maxLines: 1,
+                                                overflow: TextOverflow.ellipsis,
+                                                state.fetchDashboardModel
+                                                    .data[index][state.fetchDashboardModel.data[0].keys.toList()[cellIndex]]
+                                                    .toString(),
+                                                softWrap: true)))))));
+                      } else {
+                        return Expanded(
+                            child: Center(
+                                child: Text('Add your first key and language!',
                                     style: Theme.of(context)
                                         .textTheme
-                                        .dataTableNameTextStyle
-                                        .copyWith(
-                                            fontFamily: "Urbanist",
-                                            fontWeight: FontWeight.w900)),
-                              const Spacer(),
-                              PrimaryButton(
-                                  onPressed: () {
-                                    // Navigator.push(
-                                    //     context,
-                                    //     MaterialPageRoute(
-                                    //         builder: (context) =>
-                                    //             AddKeyForm()));
-                                  },
-                                  buttonTitle: StringConstants.kAdd,
-                                  buttonWidth: kAddButtonWidth)
-                            ]),
-                        const SizedBox(height: kGeneralSizedBoxHeight),
-                        Container(
-                            width: kDataTableContainerWidth,
-                            decoration: BoxDecoration(
-                                color: AppColor.white,
-                                border: Border.all(
-                                    width: kContainerBorderWidth,
-                                    color: Colors.black12),
-                                borderRadius: const BorderRadius.all(
-                                    Radius.circular(kCircularRadius))),
-                            child: SingleChildScrollView(
-                                physics: const BouncingScrollPhysics(),
-                                child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: kVerticalPadding,
-                                        right: kVerticalPadding,
-                                        bottom: kVerticalPadding),
-                                    child: DataTable(
-                                        dataTextStyle: Theme.of(context)
-                                            .textTheme
-                                            .tableDataTextStyle,
-                                        headingTextStyle: Theme.of(context)
-                                            .textTheme
-                                            .dataTableHeadingTextStyle,
-                                        showCheckboxColumn: true,
-                                        headingRowColor: MaterialStateProperty
-                                            .resolveWith<Color>(
-                                                (Set<MaterialState> states) {
-                                          if (states.contains(
-                                              MaterialState.hovered)) {
-                                            return Colors.white
-                                                .withOpacity(0.5);
-                                          }
-                                          return AppColor.white;
-                                        }),
-                                        dividerThickness: kDividerThickness,
-                                        columns: createDataColumns(columnNames),
-                                        rows: List.generate(10, (index) {
-                                          return DataRow(
-                                              color: MaterialStateProperty.all<
-                                                  Color>(AppColor.white),
-                                              onLongPress: () {},
-                                              selected: selectedRows[index],
-                                              onSelectChanged:
-                                                  (bool? selected) {
-                                                setState(() {
-                                                  selectedRows[index] =
-                                                      selected ?? false;
-                                                });
-                                              },
-                                              cells:
-                                                  createDataCells(cellValues));
-                                        })))))
-                      ]));
-            })));
+                                        .formHeadingTextStyle
+                                        .copyWith(color: Colors.black26))));
+                      }
+                    } else if (state is DashboardFetching) {
+                      return const Expanded(
+                          child: Center(child: CircularProgressIndicator()));
+                    } else if (state is DashboardNotFetched) {
+                      return const Text('Errorrr!!!!!!!!');
+                    }
+                    return const SizedBox.shrink();
+                  })
+                ])));
   }
 }

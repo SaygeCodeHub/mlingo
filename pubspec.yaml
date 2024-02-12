@@ -31,9 +31,13 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  bloc:
   flutter_bloc:
-  angular_bloc:
+  bloc:
+  dio:
+  get_it:
+  data_table_2:
+  horizontal_data_table:
+
 
 dev_dependencies:
   flutter_test:

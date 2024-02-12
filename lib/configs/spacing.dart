@@ -5,3 +5,4 @@ const double spacingBetweenTextFieldAndButton = 48.0;
 const double textFormFieldContentPadding = 15.0;
 const double inputDecorationVPadding = 18.0;
 const double inputDecorationHPadding = 16.0;
+const double kColumnSpacing = 10;

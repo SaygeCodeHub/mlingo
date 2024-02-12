@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mlingo/configs/spacing.dart';
+
 import 'app_color.dart';
 import 'app_dimensions.dart';
 
@@ -26,7 +27,7 @@ AppBarTheme appBarTheme = const AppBarTheme(
 ColorScheme colorScheme = const ColorScheme.light(
   surface: AppColor.white,
   background: AppColor.white,
-  primary: AppColor.orange,
+  primary: AppColor.darkBlue,
 );
 
 DrawerThemeData drawerThemeData =
@@ -131,22 +132,22 @@ extension AppTextTheme on TextTheme {
 
   TextStyle get formHeadingTextStyle {
     return const TextStyle(
-      fontSize: 17, fontWeight: FontWeight.w700, color: AppColor.darkBlue, fontFamily: "Urbanist");
+        fontSize: 17, fontWeight: FontWeight.w700, color: AppColor.black);
   }
 
   TextStyle get textFieldLabelTextStyle {
     return const TextStyle(
-        fontSize: 14, color: AppColor.darkBlue, fontWeight: FontWeight.w700,fontFamily: "Urbanist");
+        fontSize: 14, color: AppColor.darkBlue, fontWeight: FontWeight.w700);
   }
 
   TextStyle get statusTextTextStyle {
     return const TextStyle(
-        color: AppColor.darkBlue,fontWeight: FontWeight.w700,fontFamily: "Urbanist",fontSize: 13);
+        color: AppColor.darkBlue, fontWeight: FontWeight.w700, fontSize: 13);
   }
 
   TextStyle get submitButtonTextStyle {
     return const TextStyle(
-        fontFamily:"Urbanist",fontSize: 13,color: AppColor.darkBlue,fontWeight: FontWeight.w700);
+        fontSize: 13, color: AppColor.white, fontWeight: FontWeight.w700);
   }
 
   TextStyle get mlingoTextStyle {
@@ -157,5 +158,4 @@ extension AppTextTheme on TextTheme {
       color: AppColor.darkBlue,
     );
   }
-
 }
