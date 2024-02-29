@@ -1,3 +1,5 @@
 class ApiConstants {
-  static const baseUrl = '';
+  static const baseUrl = 'https://mlingo.onrender.com/v1/';
+
+  static const getAllTranslations = 'getAllTranslations';
 }

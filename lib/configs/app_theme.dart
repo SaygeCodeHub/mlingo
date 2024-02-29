@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mlingo/configs/spacing.dart';
+import 'package:mlingo/configs/app_padding.dart';
 import 'app_color.dart';
 import 'app_dimensions.dart';
 
-ThemeData newAppTheme = ThemeData(
+ThemeData appTheme = ThemeData(
     useMaterial3: false,
     colorScheme: colorScheme,
     fontFamily: 'PT_Sans',
@@ -22,15 +22,15 @@ AppBarTheme appBarTheme = const AppBarTheme(
     elevation: 0,
     centerTitle: false,
     iconTheme: IconThemeData(color: AppColor.darkBlue),
-    actionsIconTheme: IconThemeData(color: AppColor.orange));
+    actionsIconTheme: IconThemeData(color: AppColor.lightblack));
 ColorScheme colorScheme = const ColorScheme.light(
   surface: AppColor.white,
   background: AppColor.white,
-  primary: AppColor.orange,
+  primary: AppColor.white,
 );
 
 DrawerThemeData drawerThemeData =
-    const DrawerThemeData(backgroundColor: AppColor.white, elevation: 0.0);
+const DrawerThemeData(backgroundColor: AppColor.white, elevation: 0.0);
 
 IconThemeData iconThemeData = const IconThemeData(color: AppColor.darkBlue);
 InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
@@ -67,8 +67,8 @@ extension AppTextTheme on TextTheme {
   }
 
   TextStyle get primaryButtonTextStyle {
-    return const TextStyle(
-        fontSize: 16, color: AppColor.white, fontWeight: FontWeight.w700);
+    return const TextStyle(fontFamily: "Archivo",
+        fontSize: 14, color: AppColor.white, fontWeight: FontWeight.w500);
   }
 
   TextStyle get moduleHeadingTextStyle {
@@ -131,22 +131,39 @@ extension AppTextTheme on TextTheme {
 
   TextStyle get formHeadingTextStyle {
     return const TextStyle(
-      fontSize: 17, fontWeight: FontWeight.w700, color: AppColor.darkBlue, fontFamily: "Urbanist");
+        fontSize: 17,
+        fontWeight: FontWeight.w700,
+        color: AppColor.darkBlue,
+        fontFamily: "Urbanist");
   }
 
   TextStyle get textFieldLabelTextStyle {
     return const TextStyle(
-        fontSize: 14, color: AppColor.darkBlue, fontWeight: FontWeight.w700,fontFamily: "Urbanist");
+        fontSize: 14,
+        color: AppColor.darkBlue,
+        fontWeight: FontWeight.w700,
+        fontFamily: "Urbanist");
   }
 
   TextStyle get statusTextTextStyle {
     return const TextStyle(
-        color: AppColor.darkBlue,fontWeight: FontWeight.w700,fontFamily: "Urbanist",fontSize: 13);
+        color: AppColor.darkBlue,
+        fontWeight: FontWeight.w700,
+        fontFamily: "Urbanist",
+        fontSize: 13);
+  }
+
+  TextStyle get statusTextStyle {
+    return const TextStyle(
+        fontSize: 14, fontWeight: FontWeight.w500, fontFamily: "Archivo");
   }
 
   TextStyle get submitButtonTextStyle {
     return const TextStyle(
-        fontFamily:"Urbanist",fontSize: 13,color: AppColor.darkBlue,fontWeight: FontWeight.w700);
+        fontFamily: "Urbanist",
+        fontSize: 13,
+        color: AppColor.darkBlue,
+        fontWeight: FontWeight.w700);
   }
 
   TextStyle get mlingoTextStyle {
@@ -158,4 +175,18 @@ extension AppTextTheme on TextTheme {
     );
   }
 
+  TextStyle get tableColumnTextStyle {
+    return const TextStyle(
+        fontFamily: "Archivo",
+        fontWeight: FontWeight.w600,
+        fontSize: 12,
+        color: AppColor.darkGrey);
+  }
+
+  TextStyle get mlingoDashboardTextStyle {
+    return const TextStyle(fontFamily: "Archivo",
+        fontWeight: FontWeight.w700,
+        fontSize: 22,
+        color: AppColor.lightblack);
+  }
 }

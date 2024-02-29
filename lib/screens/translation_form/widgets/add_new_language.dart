@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:mlingo/configs/new_app_theme.dart';
+import 'package:mlingo/configs/app_theme.dart';
 
 import '../../../utils/constants/string_constants.dart';
 import 'new_language_field.dart';

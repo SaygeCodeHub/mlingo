@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mlingo/configs/new_app_theme.dart';
+import 'package:mlingo/configs/app_theme.dart';
 import 'package:mlingo/screens/dashboard/dashboard_screen.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: newAppTheme,
+        theme: appTheme,
         debugShowCheckedModeBanner: false,
         home: const DashboardScreen());
   }

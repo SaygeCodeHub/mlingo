@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mlingo/configs/new_app_theme.dart';
+import 'package:mlingo/configs/app_theme.dart';
 import '../../../configs/app_color.dart';
 import '../../../configs/app_dimensions.dart';
 

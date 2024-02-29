@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mlingo/configs/app_color.dart';
-import 'package:mlingo/configs/new_app_theme.dart';
+import 'package:mlingo/configs/app_theme.dart';
 import 'package:mlingo/screens/translation_form/widgets/add_new_language.dart';
 import 'package:mlingo/screens/translation_form/widgets/language_field.dart';
 import 'package:mlingo/widgets/primary_button.dart';

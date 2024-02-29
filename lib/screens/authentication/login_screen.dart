@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mlingo/configs/new_app_theme.dart';
+import 'package:mlingo/configs/app_theme.dart';
 import 'package:mlingo/widgets/primary_button.dart';
 import '../../configs/app_color.dart';
-import '../../configs/spacing.dart';
+import '../../configs/app_padding.dart';
 import '../../utils/constants/string_constants.dart';
 import '../../widgets/field_label_widget.dart';
 

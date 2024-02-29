@@ -1,4 +1,4 @@
-const double kCardRadius = 12;
+const double kCardRadius = 8;
 const double kCircularRadius = 5;
 const double kVerticalPadding = 8;
 const double kAddButtonWidth = 100;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../configs/app_spacing.dart';
-import '../../configs/spacing.dart';
+import '../../configs/app_padding.dart';
 import '../../utils/constants/string_constants.dart';
 import '../../widgets/field_label_widget.dart';
 import 'widgets/register_button.dart';

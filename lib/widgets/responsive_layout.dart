@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../configs/spacing.dart';
+import '../configs/app_padding.dart';
 import '../utils/globals.dart';
 
 class ResponsiveLayout extends StatelessWidget {
