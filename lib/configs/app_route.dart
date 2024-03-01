@@ -4,11 +4,14 @@ import 'package:mlingo/screens/dashboard/dashboard_screen.dart';
 import 'package:mlingo/screens/login/login.dart';
 
 import 'package:mlingo/screens/login/registeration.dart';
+
 class AppRoutes {
   static Route routes(RouteSettings settings) {
     switch (settings.name) {
       case DashboardScreen.routeName:
         return _createRoute(const DashboardScreen());
+      case AddKeyScreen.routeName:
+        return _createRoute(const AddKeyScreen());
       case Login.routeName:
         return _createRoute(const Login());
       case Registration.routeName:

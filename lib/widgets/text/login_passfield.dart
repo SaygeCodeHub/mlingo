@@ -10,10 +10,10 @@ class MyPassField extends StatefulWidget {
   });
 
   @override
-  _MyPassFieldState createState() => _MyPassFieldState();
+  MyPassFieldState createState() => MyPassFieldState();
 }
 
-class _MyPassFieldState extends State<MyPassField> {
+class MyPassFieldState extends State<MyPassField> {
   bool _obscureText = true;
 
   @override
@@ -27,9 +27,8 @@ class _MyPassFieldState extends State<MyPassField> {
             borderSide: BorderSide(color: Colors.white),
           ),
           focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: AppColor.darkgrey),
-          ),
-          fillColor: AppColor.lightpurple,
+            borderSide: BorderSide(color: AppColor.darkergrey),
+          ), fillColor: AppColor.lightpurple,
           filled: true,
           hintText: widget.hintText,
           hintStyle: const TextStyle(

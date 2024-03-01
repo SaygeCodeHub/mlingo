@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mlingo/configs/app_color.dart';
 import 'package:mlingo/configs/app_dimensions.dart';
+import 'package:mlingo/screens/addKey/add_key_screen.dart';
 import 'package:mlingo/screens/login/registeration.dart';
 import 'package:mlingo/widgets/text/login_button.dart';
 import 'package:mlingo/widgets/text/login_passfield.dart';
@@ -106,7 +107,9 @@ class Login extends StatelessWidget {
                 const SizedBox(height: ksizebox),
                 MyButton(
                   hintText: 'Login',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, AddKeyScreen.routeName);
+                  },
                 ),
                 const SizedBox(height: kDashboardHorizontalPadding),
                 const Padding(
