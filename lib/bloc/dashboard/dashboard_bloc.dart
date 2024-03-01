@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
-import '../../di/modules.dart';
+import 'package:mlingo/di/app_module.dart';
 import '../../data/models/dashboard/fetch_dashboard_model.dart';
 import '../../repository/dashboard/dashboard_repository.dart';
 

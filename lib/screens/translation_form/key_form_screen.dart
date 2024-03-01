@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mlingo/bloc/translation_form/translation_form_bloc.dart';
 import 'package:mlingo/configs/app_color.dart';
 import 'package:mlingo/configs/app_theme.dart';
+import 'package:mlingo/screens/dashboard/dashboard_screen_old.dart';
 import 'package:mlingo/screens/translation_form/widgets/add_new_language.dart';
 import 'package:mlingo/screens/translation_form/widgets/language_field.dart';
 
@@ -12,7 +13,6 @@ import '../../configs/app_dimensions.dart';
 import '../../configs/app_spacing.dart';
 import '../../utils/constants/string_constants.dart';
 import '../../widgets/primary_button.dart';
-import '../dashboard/dashboard_screen.dart';
 
 class AddNewKey extends StatelessWidget {
   final bool isEdit;
@@ -176,7 +176,7 @@ class AddNewKey extends StatelessWidget {
                                                     context,
                                                     MaterialPageRoute(
                                                         builder: (context) =>
-                                                            const DashboardScreen()));
+                                                            const DashboardScreenOld()));
                                               }
                                             },
                                             child: Padding(

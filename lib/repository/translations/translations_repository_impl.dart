@@ -6,7 +6,6 @@ import 'package:mlingo/services/client_services.dart';
 import 'package:mlingo/utils/constants/api_constants.dart';
 
 class TranslationsRepositoryImpl implements TranslationsRepository {
-  final Cache cache = getIt<Cache>();
 
   @override
   Future<GetAllTranslationsModel> getAllTranslations() async {

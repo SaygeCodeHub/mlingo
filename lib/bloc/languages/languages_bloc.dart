@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:mlingo/di/app_module.dart';
 
 import '../../data/models/languages/get_languages_model.dart';
-import '../../di/modules.dart';
 import '../../repository/languages/get_languages_repository.dart';
 import 'languages_event.dart';
 import 'languages_state.dart';

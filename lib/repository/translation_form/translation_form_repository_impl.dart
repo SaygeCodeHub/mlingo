@@ -4,7 +4,7 @@ import 'package:mlingo/repository/translation_form/translation_form_repository.d
 import '../../utils/constants/api_constants.dart';
 import '../../utils/dio_client.dart';
 
-class TranslationRepositoryImpl extends TranslationFormRepository {
+class TranslationFormRepositoryImpl extends TranslationFormRepository {
   @override
   Future<TranslationFormModel> translationForm(Map translationFormMap) async {
     try {

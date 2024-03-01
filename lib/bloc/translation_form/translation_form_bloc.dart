@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:mlingo/bloc/translation_form/translation_form_event.dart';
 import 'package:mlingo/bloc/translation_form/translation_form_state.dart';
+import 'package:mlingo/di/app_module.dart';
 
 import '../../data/models/translation_form/translation_form_model.dart';
-import '../../di/modules.dart';
 import '../../repository/translation_form/translation_form_repository.dart';
 
 class TranslationFormBloc

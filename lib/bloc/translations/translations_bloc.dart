@@ -1,9 +1,8 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:mlingo/bloc/translations_events.dart';
-import 'package:mlingo/bloc/translations_states.dart';
-import 'package:mlingo/cache/cache.dart';
+import 'package:mlingo/bloc/translations/translations_events.dart';
+import 'package:mlingo/bloc/translations/translations_states.dart';
 import 'package:mlingo/data/models/translations/get_all_translations_model.dart';
 import 'package:mlingo/di/app_module.dart';
 
@@ -11,7 +10,6 @@ import 'package:mlingo/repository/translations/translations_repository.dart';
 
 class TranslationsBloc extends Bloc<TranslationsEvents, TranslationsStates> {
   final TranslationsRepository _translationsRepository = getIt<TranslationsRepository>();
-  final Cache cache = getIt<Cache>();
 
   TranslationsStates get initialState => InitialiseTranslations();
 
