@@ -312,6 +312,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.6.7"
+  horizontal_data_table:
+      dependency: "direct main"
+      description:
+        name: horizontal_data_table
+        sha256: c8ab5256bbced698a729f3e0ff2cb0e8e97416cdbb082860370eaf883badf722
+        url: "https://pub.dev"
+      source: hosted
+      version: "4.3.1"
   glob:
     dependency: transitive
     description:
@@ -456,6 +464,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+    version: "1.10.0"
   nested:
     dependency: transitive
     description:

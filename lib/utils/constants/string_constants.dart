@@ -35,8 +35,9 @@ class StringConstants {
   static const kStatus = 'Status';
   static const kSubmit = 'Submit';
   static const kAddNewKey = 'Add New Key';
+  static const kEditKey = 'Edit Key';
   static const kNewLang = 'Add Language';
   static const kAddNewLangTitle = 'Language';
   static const kNewLangValue = 'Value';
-  static const kAddValue  = 'Add Value';
+  static const kAddValue = 'Add Value';
 }
