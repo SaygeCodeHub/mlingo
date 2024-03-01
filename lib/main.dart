@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           BlocProvider(lazy: false, create: (context) => LanguagesBloc()),
           BlocProvider(lazy: false, create: (context) => TranslationFormBloc()),
         ],
-        child: const MaterialApp(theme: appTheme,
-            debugShowCheckedModeBanner: false, home: DashboardScreen()));
+        child: MaterialApp(theme: appTheme,
+            debugShowCheckedModeBanner: false, home: const DashboardScreen()));
   }
 }
