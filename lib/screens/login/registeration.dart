@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mlingo/configs/app_color.dart';
 import 'package:mlingo/configs/app_dimensions.dart';
@@ -28,7 +29,7 @@ class Registration extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(
-                  horizontal: kregisterpadding, vertical: kverticalpadding),
+                  horizontal: kregisterpadding, vertical: kregisterpadding),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,18 +72,15 @@ class Registration extends StatelessWidget {
               ),
             ),
             Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start
+              ,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Padding(
-                  padding: EdgeInsets.fromLTRB(kleftpadding, kCircularRadius,
-                      krightpadding, kCircularRadius),
-                  child: Text(
-                    "Sign Up",
-                    style: TextStyle(
-                      fontSize: kDashboardHorizontalPadding,
-                      fontWeight: FontWeight.bold,
-                    ),
+                Text(
+                  "Sign Up",
+                  style: TextStyle(
+                    fontSize: kDashboardHorizontalPadding,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(height: kDashboardHorizontalPadding),
