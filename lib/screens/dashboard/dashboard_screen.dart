@@ -1,26 +1,23 @@
-import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mlingo/bloc/translations/translations_bloc.dart';
+import 'package:mlingo/bloc/translations/translations_events.dart';
+import 'package:mlingo/bloc/translations/translations_states.dart';
 
 import 'package:mlingo/configs/app_color.dart';
 import 'package:mlingo/configs/app_dimensions.dart';
 import 'package:mlingo/configs/app_spacing.dart';
 import 'package:mlingo/configs/app_theme.dart';
-import 'package:mlingo/utils/formatters.dart';
+import 'package:mlingo/screens/dashboard/widgets/dashboard_data_table.dart';
 import 'package:mlingo/widgets/primary_button.dart';
-import 'package:mlingo/widgets/table/table_cells.dart';
 
-class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({super.key});
-
-  @override
-  State<DashboardScreen> createState() => _DashboardScreenState();
-}
-
-class _DashboardScreenState extends State<DashboardScreen> {
-  List<bool> selectedList = List.generate(5, (index) => false);
+class DashboardScreen extends StatelessWidget {
+  const DashboardScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    context.read<TranslationsBloc>().add(GetAllTranslations());
+
     return Scaffold(
       backgroundColor: AppColor.white,
       appBar: AppBar(
@@ -42,65 +39,37 @@ class _DashboardScreenState extends State<DashboardScreen> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 PrimaryButton(
-                  onPressed: () {},
-                  icon: Icons.add,
-                  buttonTitle: "New Key",
-                  buttonWidth: spacingXExcel
-                )
+                    onPressed: () {},
+                    icon: Icons.add,
+                    buttonTitle: "New Key",
+                    buttonWidth: spacingXExcel)
               ],
             ),
             const SizedBox(height: spacingMedium),
-            Expanded(
-              child: Card(
-                shape: const RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.all(Radius.circular(kCardRadius))),
-                child: Expanded(
-                    child: DataTable2(
-                  showCheckboxColumn: true,
-                  headingCheckboxTheme: CheckboxThemeData(
-                      side: const BorderSide(
-                          width: 0, color: AppColor.lighterGrey),
-                      fillColor: MaterialStateColor.resolveWith((Set states) {
-                        if (states.contains(MaterialState.selected)) {
-                          return AppColor.mediumOrchid;
-                        }
-                        return AppColor.white;
-                      })),
-                  datarowCheckboxTheme: CheckboxThemeData(
-                      side: const BorderSide(
-                          width: 0, color: AppColor.lighterGrey),
-                      fillColor: MaterialStateColor.resolveWith((Set states) {
-                        if (states.contains(MaterialState.selected)) {
-                          return AppColor.mediumOrchid;
-                        }
-                        return AppColor.white;
-                      })),
-                  headingTextStyle:
-                      Theme.of(context).textTheme.tableColumnTextStyle,
-                  columns: const [
-                    DataColumn2(label: Text("Key"), fixedWidth: spacingXXXHuge),
-                    DataColumn2(label: Text("Status"), fixedWidth: spacingXXXXHuge),
-                    DataColumn2(label: Text("English"))
-                  ],
-                  rows: List.generate(
-                      5,
-                      (index) => DataRow2(
-                              selected: selectedList[index],
-                              onSelectChanged: (value) {
-                                setState(() {
-                                  selectedList[index] = !selectedList[index];
-                                });
-                              },
-                              cells: [
-                                TableText(text: "hello"),
-                                TableStatusChips(
-                                    status: "Active",
-                                    color: getColorFromStatus("Active")),
-                                TableText(text: "Hello"),
-                              ])),
-                )),
-              ),
+            BlocBuilder<TranslationsBloc, TranslationsStates>(
+              builder: (context, state) {
+                if (state is FetchingAllTranslations) {
+                  return const Expanded(
+                    child: Center(
+                        child: CircularProgressIndicator(
+                            color: AppColor.mediumOrchid)),
+                  );
+                }
+                if (state is TranslationsFetched) {
+                  return Expanded(
+                    child: Card(
+                      shape: const RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(kCardRadius))),
+                      child: DashboardDataTable(
+                        getAllTranslationsModel: state.getAllTranslationsModel,
+                      ),
+                    ),
+                  );
+                } else {
+                  return const SizedBox.shrink();
+                }
+              },
             )
           ],
         ),

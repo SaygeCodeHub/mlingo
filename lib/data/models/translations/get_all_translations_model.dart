@@ -1,8 +1,10 @@
 import 'dart:convert';
 
-GetAllTranslationsModel getAllTranslationsModelFromJson(String str) => GetAllTranslationsModel.fromJson(json.decode(str));
+GetAllTranslationsModel getAllTranslationsModelFromJson(String str) =>
+    GetAllTranslationsModel.fromJson(json.decode(str));
 
-String getAllTranslationsModelToJson(GetAllTranslationsModel data) => json.encode(data.toJson());
+String getAllTranslationsModelToJson(GetAllTranslationsModel data) =>
+    json.encode(data.toJson());
 
 class GetAllTranslationsModel {
   final int status;
@@ -15,17 +17,19 @@ class GetAllTranslationsModel {
     required this.data,
   });
 
-  factory GetAllTranslationsModel.fromJson(Map<String, dynamic> json) => GetAllTranslationsModel(
-    status: json["status"],
-    message: json["message"],
-    data: List<GetAllTranslationsData>.from(json["data"].map((x) => GetAllTranslationsData.fromJson(x))),
-  );
+  factory GetAllTranslationsModel.fromJson(Map<String, dynamic> json) =>
+      GetAllTranslationsModel(
+        status: json["status"],
+        message: json["message"],
+        data: List<GetAllTranslationsData>.from(
+            json["data"].map((x) => GetAllTranslationsData.fromJson(x))),
+      );
 
   Map<String, dynamic> toJson() => {
-    "status": status,
-    "message": message,
-    "data": List<dynamic>.from(data.map((x) => x.toJson())),
-  };
+        "status": status,
+        "message": message,
+        "data": List<dynamic>.from(data.map((x) => x.toJson())),
+      };
 }
 
 class GetAllTranslationsData {
@@ -47,23 +51,24 @@ class GetAllTranslationsData {
     required this.french,
   });
 
-  factory GetAllTranslationsData.fromJson(Map<String, dynamic> json) => GetAllTranslationsData(
-    id: json["id"],
-    key: json["key"],
-    english: json["English"],
-    german: json["German"],
-    hindi: json["Hindi"],
-    spanish: json["Spanish"],
-    french: json["French"],
-  );
+  factory GetAllTranslationsData.fromJson(Map<String, dynamic> json) =>
+      GetAllTranslationsData(
+        id: json["id"],
+        key: json["key"],
+        english: json["English"],
+        german: json["German"],
+        hindi: json["Hindi"],
+        spanish: json["Spanish"],
+        french: json["French"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "key": key,
-    "English": english,
-    "German": german,
-    "Hindi": hindi,
-    "Spanish": spanish,
-    "French": french,
-  };
+        "id": id,
+        "key": key,
+        "English": english,
+        "German": german,
+        "Hindi": hindi,
+        "Spanish": spanish,
+        "French": french,
+      };
 }

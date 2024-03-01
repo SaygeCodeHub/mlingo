@@ -47,7 +47,7 @@ class _AddNewLanguageState extends State<AddNewLanguage> {
                     style: Theme.of(context)
                         .textTheme
                         .submitButtonTextStyle
-                        .copyWith(color:AppColor.darkBlue))))
+                        .copyWith(color: AppColor.darkBlue))))
     ]);
   }
 }

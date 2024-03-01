@@ -9,7 +9,8 @@ import 'package:mlingo/di/app_module.dart';
 import 'package:mlingo/repository/translations/translations_repository.dart';
 
 class TranslationsBloc extends Bloc<TranslationsEvents, TranslationsStates> {
-  final TranslationsRepository _translationsRepository = getIt<TranslationsRepository>();
+  final TranslationsRepository _translationsRepository =
+      getIt<TranslationsRepository>();
 
   TranslationsStates get initialState => InitialiseTranslations();
 
@@ -19,18 +20,19 @@ class TranslationsBloc extends Bloc<TranslationsEvents, TranslationsStates> {
 
   FutureOr<void> _getAllTranslations(
       GetAllTranslations event, Emitter<TranslationsStates> emit) async {
-    emit(FetchingAllTranslations());
     try {
+      emit(FetchingAllTranslations());
       GetAllTranslationsModel getAllTranslationsModel =
-      await _translationsRepository.getAllTranslations();
+          await _translationsRepository.getAllTranslations();
       if (getAllTranslationsModel.status == 200) {
-        emit(TranslationsFetched(getAllTranslationsModel: getAllTranslationsModel));
+        emit(TranslationsFetched(
+            getAllTranslationsModel: getAllTranslationsModel));
       } else {
-        emit(FetchingTranslationsFailed(errorMessage: getAllTranslationsModel.message));
+        emit(FetchingTranslationsFailed(
+            errorMessage: getAllTranslationsModel.message));
       }
     } catch (e) {
       emit(FetchingTranslationsFailed(errorMessage: e.toString()));
     }
   }
-
 }

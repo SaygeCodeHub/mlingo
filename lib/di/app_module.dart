@@ -15,11 +15,11 @@ configurableDependencies() {
   getIt.registerLazySingleton<ClientServices>(() => ClientServices());
 
   getIt.registerLazySingleton<DashboardRepository>(
-          () => DashboardRepositoryImpl());
+      () => DashboardRepositoryImpl());
   getIt.registerLazySingleton<TranslationFormRepository>(
-          () => TranslationFormRepositoryImpl());
+      () => TranslationFormRepositoryImpl());
   getIt.registerLazySingleton<GetLanguagesRepository>(
-          () => GetLanguagesRepositoryImpl());
+      () => GetLanguagesRepositoryImpl());
   getIt.registerLazySingleton<TranslationsRepository>(
-          () => TranslationsRepositoryImpl());
+      () => TranslationsRepositoryImpl());
 }

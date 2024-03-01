@@ -26,11 +26,11 @@ AppBarTheme appBarTheme = const AppBarTheme(
 ColorScheme colorScheme = const ColorScheme.light(
   surface: AppColor.white,
   background: AppColor.white,
-  primary: AppColor.white,
+  primary: AppColor.mediumOrchid,
 );
 
 DrawerThemeData drawerThemeData =
-const DrawerThemeData(backgroundColor: AppColor.white, elevation: 0.0);
+    const DrawerThemeData(backgroundColor: AppColor.white, elevation: 0.0);
 
 IconThemeData iconThemeData = const IconThemeData(color: AppColor.darkBlue);
 InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
@@ -67,8 +67,11 @@ extension AppTextTheme on TextTheme {
   }
 
   TextStyle get primaryButtonTextStyle {
-    return const TextStyle(fontFamily: "Archivo",
-        fontSize: 14, color: AppColor.white, fontWeight: FontWeight.w500);
+    return const TextStyle(
+        fontFamily: "Archivo",
+        fontSize: 14,
+        color: AppColor.white,
+        fontWeight: FontWeight.w500);
   }
 
   TextStyle get moduleHeadingTextStyle {
@@ -172,7 +175,8 @@ extension AppTextTheme on TextTheme {
   }
 
   TextStyle get mlingoDashboardTextStyle {
-    return const TextStyle(fontFamily: "Archivo",
+    return const TextStyle(
+        fontFamily: "Archivo",
         fontWeight: FontWeight.w700,
         fontSize: 22,
         color: AppColor.lightblack);
