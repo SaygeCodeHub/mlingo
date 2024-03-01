@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:mlingo/screens/addKey/add_key_screen.dart';
 import 'package:mlingo/screens/dashboard/dashboard_screen.dart';
+import 'package:mlingo/screens/login/login.dart';
 
+import 'package:mlingo/screens/login/registeration.dart';
 class AppRoutes {
   static Route routes(RouteSettings settings) {
     switch (settings.name) {
       case DashboardScreen.routeName:
         return _createRoute(const DashboardScreen());
+      case Login.routeName:
+        return _createRoute(const Login());
+      case Registration.routeName:
+        return _createRoute(const Registration());
       default:
-        return _createRoute(const AddKeyScreen());
+        return _createRoute(const Registration());
     }
   }
 
