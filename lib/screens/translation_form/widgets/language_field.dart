@@ -11,7 +11,6 @@ class LanguageField extends StatelessWidget {
     super.key,
     required this.hintText,
     required this.text,
-
   });
 
   @override
@@ -19,13 +18,14 @@ class LanguageField extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Expanded( flex: 5,
+        Expanded(
+          flex: 5,
           child: Text(text,
-              style: Theme.of(context).textTheme
-                  .textFieldLabelTextStyle),
+              style: Theme.of(context).textTheme.textFieldLabelTextStyle),
         ),
         const SizedBox(width: 20),
-        Expanded( flex: 10,
+        Expanded(
+          flex: 10,
           child: TextFormField(
             decoration: InputDecoration(
                 isDense: true,
@@ -35,7 +35,8 @@ class LanguageField extends StatelessWidget {
                 border: const OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black12)),
                 hintText: hintText,
-                hintStyle: const TextStyle(fontSize: kHintTextSize, color: AppColor.black)),
+                hintStyle: const TextStyle(
+                    fontSize: kHintTextSize, color: AppColor.black)),
           ),
         ),
       ],

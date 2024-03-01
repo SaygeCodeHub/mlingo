@@ -38,5 +38,5 @@ class StringConstants {
   static const kNewLang = 'Add Language';
   static const kAddNewLangTitle = 'Language';
   static const kNewLangValue = 'Value';
-  static const kAddValue  = 'Add Value';
+  static const kAddValue = 'Add Value';
 }

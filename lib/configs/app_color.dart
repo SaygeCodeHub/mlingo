@@ -10,7 +10,9 @@ class AppColor {
   static const Color transparent = Color(0x00000000);
   static const Color grey = Color(0xFFF7F9FB);
 
+  static const Color boldGrey = Color(0xFF9E9E9E);
   static const Color lightGrey = Color(0xFFFAFCFE);
+  static const Color darkgrey = Color(0xFFEEEEEE);
 
   static const Color lightBlue = Color(0xFF345AFA);
   static const Color blueAccent = Color(0xFFD0CCED);
@@ -19,4 +21,8 @@ class AppColor {
 
   static const Color successGreen = Color(0xFF4BB543);
   static const Color errorRed = Color(0xFFE53935);
+
+  static const Color deepPurple = Color(0xFF651FFF);
+  static const Color lightpurple = Color(0xFFF3E5F5);
+  static const Color lowpurple = Color(0xFF9575CD);
 }

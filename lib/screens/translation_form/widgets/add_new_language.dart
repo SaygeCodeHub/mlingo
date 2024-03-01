@@ -7,8 +7,7 @@ import '../../../utils/constants/string_constants.dart';
 import 'new_language_field.dart';
 
 class AddNewLanguage extends StatefulWidget {
-
-   const AddNewLanguage({super.key});
+  const AddNewLanguage({super.key});
 
   @override
   State<AddNewLanguage> createState() => _AddNewLanguageState();
@@ -38,15 +37,14 @@ class _AddNewLanguageState extends State<AddNewLanguage> {
               onPressed: () {
                 setState(() {
                   additionalTextFieldsCount++;
-                  showAddLanguageButton = additionalTextFieldsCount<double.infinity;
+                  showAddLanguageButton =
+                      additionalTextFieldsCount < double.infinity;
                   log('additionalTextFieldsCount========>$additionalTextFieldsCount');
                 });
               },
               child: Text(
                 StringConstants.kNewLang,
-                style: Theme.of(context)
-                    .textTheme
-                    .submitButtonTextStyle,
+                style: Theme.of(context).textTheme.submitButtonTextStyle,
               ),
             ),
           ),

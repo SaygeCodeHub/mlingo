@@ -19,13 +19,14 @@ class _NewLanguageFieldState extends State<NewLanguageField> {
       children: [
         Row(
           children: [
-            Expanded(flex: 5,
+            Expanded(
+              flex: 5,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(StringConstants.kAddNewLangTitle,
-                      style: Theme.of(context).textTheme
-                          .textFieldLabelTextStyle),
+                      style:
+                          Theme.of(context).textTheme.textFieldLabelTextStyle),
                   const SizedBox(height: 10),
                   TextFormField(
                     decoration: const InputDecoration(
@@ -36,18 +37,21 @@ class _NewLanguageFieldState extends State<NewLanguageField> {
                         border: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.black12)),
                         hintText: StringConstants.kNewLang,
-                        hintStyle: TextStyle(fontSize: kHintTextSize, color: AppColor.black)),
-                  )],
+                        hintStyle: TextStyle(
+                            fontSize: kHintTextSize, color: AppColor.black)),
+                  )
+                ],
               ),
             ),
             const SizedBox(width: 40),
-            Expanded(flex: 10,
+            Expanded(
+              flex: 10,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(StringConstants.kNewLangValue,
-                      style: Theme.of(context).textTheme
-                          .textFieldLabelTextStyle),
+                      style:
+                          Theme.of(context).textTheme.textFieldLabelTextStyle),
                   const SizedBox(height: 10),
                   TextFormField(
                     decoration: const InputDecoration(
@@ -58,20 +62,25 @@ class _NewLanguageFieldState extends State<NewLanguageField> {
                         border: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.black12)),
                         hintText: StringConstants.kAddValue,
-                        hintStyle: TextStyle(fontSize: kHintTextSize, color: AppColor.black)),
-                  )],
+                        hintStyle: TextStyle(
+                            fontSize: kHintTextSize, color: AppColor.black)),
+                  )
+                ],
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 25),
-              child: IconButton(alignment: Alignment.center,onPressed: (){
-                widget.onMinimize();
-              }, icon: const Icon(Icons.remove)),
+              child: IconButton(
+                  alignment: Alignment.center,
+                  onPressed: () {
+                    widget.onMinimize();
+                  },
+                  icon: const Icon(Icons.remove)),
             )
           ],
         ),
-    const SizedBox(height: 20)
-    ],
+        const SizedBox(height: 20)
+      ],
     );
   }
 }

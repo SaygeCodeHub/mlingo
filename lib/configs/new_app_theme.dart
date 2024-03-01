@@ -131,22 +131,34 @@ extension AppTextTheme on TextTheme {
 
   TextStyle get formHeadingTextStyle {
     return const TextStyle(
-      fontSize: 17, fontWeight: FontWeight.w700, color: AppColor.darkBlue, fontFamily: "Urbanist");
+        fontSize: 17,
+        fontWeight: FontWeight.w700,
+        color: AppColor.darkBlue,
+        fontFamily: "Urbanist");
   }
 
   TextStyle get textFieldLabelTextStyle {
     return const TextStyle(
-        fontSize: 14, color: AppColor.darkBlue, fontWeight: FontWeight.w700,fontFamily: "Urbanist");
+        fontSize: 14,
+        color: AppColor.darkBlue,
+        fontWeight: FontWeight.w700,
+        fontFamily: "Urbanist");
   }
 
   TextStyle get statusTextTextStyle {
     return const TextStyle(
-        color: AppColor.darkBlue,fontWeight: FontWeight.w700,fontFamily: "Urbanist",fontSize: 13);
+        color: AppColor.darkBlue,
+        fontWeight: FontWeight.w700,
+        fontFamily: "Urbanist",
+        fontSize: 13);
   }
 
   TextStyle get submitButtonTextStyle {
     return const TextStyle(
-        fontFamily:"Urbanist",fontSize: 13,color: AppColor.darkBlue,fontWeight: FontWeight.w700);
+        fontFamily: "Urbanist",
+        fontSize: 13,
+        color: AppColor.darkBlue,
+        fontWeight: FontWeight.w700);
   }
 
   TextStyle get mlingoTextStyle {
@@ -157,5 +169,4 @@ extension AppTextTheme on TextTheme {
       color: AppColor.darkBlue,
     );
   }
-
 }
