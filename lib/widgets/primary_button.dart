@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mlingo/configs/app_spacing.dart';
 import 'package:mlingo/configs/app_theme.dart';
 import '../configs/app_color.dart';
 import '../configs/app_dimensions.dart';
@@ -31,13 +32,20 @@ class PrimaryButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
             shape: shape ??
                 RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(kCircularRadius)),
-            backgroundColor: backgroundColor ?? AppColor.lightBlue,
+                    borderRadius: BorderRadius.circular(kCardRadius)),
+            backgroundColor: backgroundColor ?? AppColor.mediumOrchid,
             minimumSize:
                 Size(buttonWidth ?? double.maxFinite, kElevatedButtonHeight)),
         child: FittedBox(
-            child: Text(buttonTitle,
+            child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, size: spacingLarge),
+            const SizedBox(width: spacingXSmall),
+            Text(buttonTitle,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.primaryButtonTextStyle)));
+                style: Theme.of(context).textTheme.primaryButtonTextStyle),
+          ],
+        )));
   }
 }

@@ -12,7 +12,6 @@ import 'package:mlingo/widgets/table/table_cells.dart';
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
 
-
   @override
   State<DashboardScreen> createState() => _DashboardScreenState();
 }
@@ -44,12 +43,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
               children: [
                 PrimaryButton(
                   onPressed: () {},
-                  buttonTitle: "Add New Key",
-                  buttonWidth: 120,
+                  icon: Icons.add,
+                  buttonTitle: "New Key",
+                  buttonWidth: spacingXExcel
                 )
               ],
             ),
-            const SizedBox(height: spacingLarge),
+            const SizedBox(height: spacingMedium),
             Expanded(
               child: Card(
                 shape: const RoundedRectangleBorder(
@@ -79,8 +79,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   headingTextStyle:
                       Theme.of(context).textTheme.tableColumnTextStyle,
                   columns: const [
-                    DataColumn2(label: Text("Key"), fixedWidth: 200),
-                    DataColumn2(label: Text("Status"), fixedWidth: 180),
+                    DataColumn2(label: Text("Key"), fixedWidth: spacingXXXHuge),
+                    DataColumn2(label: Text("Status"), fixedWidth: spacingXXXXHuge),
                     DataColumn2(label: Text("English"))
                   ],
                   rows: List.generate(

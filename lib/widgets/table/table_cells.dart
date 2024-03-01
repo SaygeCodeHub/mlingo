@@ -8,7 +8,7 @@ class TableText extends DataCell {
             softWrap: false,
             overflow: TextOverflow.fade,
             style: const TextStyle(
-                fontSize: 14,
+                fontSize: 16,
                 fontWeight: FontWeight.w500,
                 fontFamily: "Archivo")));
 }

@@ -155,7 +155,7 @@ extension AppTextTheme on TextTheme {
 
   TextStyle get statusTextStyle {
     return const TextStyle(
-        fontSize: 14, fontWeight: FontWeight.w500, fontFamily: "Archivo");
+        fontSize: 16, fontWeight: FontWeight.w500, fontFamily: "Archivo");
   }
 
   TextStyle get submitButtonTextStyle {
@@ -179,7 +179,7 @@ extension AppTextTheme on TextTheme {
     return const TextStyle(
         fontFamily: "Archivo",
         fontWeight: FontWeight.w600,
-        fontSize: 12,
+        fontSize: 14,
         color: AppColor.darkGrey);
   }
 
