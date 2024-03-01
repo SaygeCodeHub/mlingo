@@ -5,8 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mlingo/bloc/languages/languages_bloc.dart';
 import 'package:mlingo/bloc/translation_form/translation_form_bloc.dart';
 import 'package:mlingo/di/app_module.dart';
-import 'package:mlingo/screens/dashboard/dashboard_screen.dart';
+import 'package:mlingo/screens/addKey/add_key_screen.dart';
 import 'bloc/dashboard/dashboard_bloc.dart';
+import 'configs/app_route.dart';
 
 Future<void> main() async {
   await _initApp();
@@ -35,8 +36,9 @@ class MyApp extends StatelessWidget {
           BlocProvider(lazy: false, create: (context) => TranslationsBloc()),
         ],
         child: MaterialApp(
+            onGenerateRoute: AppRoutes.routes,
             theme: appTheme,
             debugShowCheckedModeBanner: false,
-            home: const DashboardScreen()));
+            home: const AddKeyScreen()));
   }
 }

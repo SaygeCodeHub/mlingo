@@ -40,4 +40,7 @@ class StringConstants {
   static const kAddNewLangTitle = 'Language';
   static const kNewLangValue = 'Value';
   static const kAddValue = 'Add Value';
+  static const kCreateFirstKey = 'Create First Key';
+  static const kaddKey = 'Add Key';
+  static const kKeyBrief = 'Add your Key and Mlingo will translate it for you.';
 }

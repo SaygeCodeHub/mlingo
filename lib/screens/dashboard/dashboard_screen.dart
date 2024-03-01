@@ -13,6 +13,7 @@ import 'package:mlingo/widgets/primary_button.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({Key? key}) : super(key: key);
+  static const routeName = 'DashboardScreen';
 
   @override
   Widget build(BuildContext context) {

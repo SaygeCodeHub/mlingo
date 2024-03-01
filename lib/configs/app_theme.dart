@@ -22,7 +22,7 @@ AppBarTheme appBarTheme = const AppBarTheme(
     elevation: 0,
     centerTitle: false,
     iconTheme: IconThemeData(color: AppColor.darkBlue),
-    actionsIconTheme: IconThemeData(color: AppColor.lightblack));
+    actionsIconTheme: IconThemeData(color: AppColor.lightBlack));
 ColorScheme colorScheme = const ColorScheme.light(
   surface: AppColor.white,
   background: AppColor.white,
@@ -179,6 +179,15 @@ extension AppTextTheme on TextTheme {
         fontFamily: "Archivo",
         fontWeight: FontWeight.w700,
         fontSize: 22,
-        color: AppColor.lightblack);
+        color: AppColor.lightBlack);
+  }
+
+  TextStyle get createKeyStyle {
+    return const TextStyle(
+        fontSize: 20, fontWeight: FontWeight.w700, color: AppColor.black);
+  }
+
+  TextStyle get keyBriefStyle {
+    return const TextStyle(fontSize: 15, color: AppColor.blackLight);
   }
 }

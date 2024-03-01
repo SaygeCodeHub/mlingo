@@ -7,7 +7,7 @@ class AppColor {
   static const Color blue = Color(0xFF5D5FEF);
   static const Color faintBlue = Color(0xFFb1c5ff);
   static const Color black = Color(0xFF14111F);
-  static const Color lightblack = Color(0xFF101828);
+  static const Color lightBlack = Color(0xFF101828);
   static const Color transparent = Color(0x00000000);
   static const Color grey = Color(0xFFF7F9FB);
 
@@ -24,4 +24,5 @@ class AppColor {
   static const Color errorRed = Color(0xFFE53935);
 
   static const Color mediumOrchid = Color(0xFFC86BFA);
+  static const Color blackLight = Color(0xFF5A607F);
 }
