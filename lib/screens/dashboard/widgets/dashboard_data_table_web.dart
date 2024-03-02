@@ -7,17 +7,17 @@ import 'package:mlingo/data/models/translations/get_all_translations_model.dart'
 import 'package:mlingo/utils/formatters.dart';
 import 'package:mlingo/widgets/table/table_cells.dart';
 
-class DashboardDataTable extends StatefulWidget {
+class DashboardDataTableWeb extends StatefulWidget {
   final GetAllTranslationsModel getAllTranslationsModel;
 
-  const DashboardDataTable({required this.getAllTranslationsModel, Key? key})
+  const DashboardDataTableWeb({required this.getAllTranslationsModel, Key? key})
       : super(key: key);
 
   @override
-  DashboardDataTableState createState() => DashboardDataTableState();
+  DashboardDataTableWebState createState() => DashboardDataTableWebState();
 }
 
-class DashboardDataTableState extends State<DashboardDataTable> {
+class DashboardDataTableWebState extends State<DashboardDataTableWeb> {
   late List<bool> selectedList;
 
   @override
