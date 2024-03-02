@@ -8,6 +8,7 @@ import 'package:mlingo/configs/app_dimensions.dart';
 import 'package:mlingo/configs/app_spacing.dart';
 import 'package:mlingo/configs/app_theme.dart';
 import 'package:mlingo/screens/dashboard/widgets/dashboard_data_table.dart';
+import 'package:mlingo/utils/constants/string_constants.dart';
 import 'package:mlingo/widgets/primary_button.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -23,7 +24,7 @@ class DashboardScreen extends StatelessWidget {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           titleSpacing: spacingHuge,
-          title: const Text("Mlingo"),
+          title: const Text(StringConstants.kMlingo),
           titleTextStyle: Theme.of(context).textTheme.mlingoAppBarTextStyle,
           actions: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.settings)),

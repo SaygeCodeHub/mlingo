@@ -17,7 +17,7 @@ class AddKeyScreen extends StatelessWidget {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           titleSpacing: spacingHuge,
-          title: const Text("Mlingo"),
+          title: const Text(StringConstants.kMlingo),
           titleTextStyle: Theme.of(context).textTheme.mlingoAppBarTextStyle,
           actions: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.settings)),
