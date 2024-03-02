@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mlingo/bloc/translations/translations_bloc.dart';
 import 'package:mlingo/bloc/translations/translations_events.dart';
+import 'package:mlingo/bloc/translations/translations_states.dart';
 import 'package:mlingo/configs/app_color.dart';
+import 'package:mlingo/configs/app_dimensions.dart';
 import 'package:mlingo/configs/app_spacing.dart';
 import 'package:mlingo/configs/app_theme.dart';
-import 'package:mlingo/screens/dashboard/dashboard_mobile_screen.dart';
-import 'package:mlingo/screens/dashboard/dashboard_web_screen.dart';
-import 'package:mlingo/widgets/responsive_layout.dart';
+import 'package:mlingo/screens/dashboard/widgets/dashboard_data_table.dart';
+import 'package:mlingo/widgets/primary_button.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -30,10 +31,47 @@ class DashboardScreen extends StatelessWidget {
             IconButton(onPressed: () {}, icon: const Icon(Icons.person))
           ],
         ),
-        body:  const Expanded(
-          child: ResponsiveLayout(
-              desktopBody: DashboardWebScreen(),
-              mobileBody: DashboardMobileScreen()),
+        body: Padding(
+          padding: const EdgeInsets.only(
+              left: spacingHuge, right: spacingHuge, bottom: spacingHuge),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  PrimaryButton(
+                      onPressed: () {},
+                      icon: Icons.add,
+                      buttonTitle: "New Key",
+                      buttonWidth: spacingXExcel)
+                ],
+              ),
+              const SizedBox(height: spacingMedium),
+              BlocBuilder<TranslationsBloc, TranslationsStates>(
+                builder: (context, state) {
+                  if (state is FetchingAllTranslations) {
+                    return const Expanded(
+                      child: Center(
+                          child: CircularProgressIndicator(
+                              color: AppColor.mediumOrchid)),
+                    );
+                  }
+                  if (state is TranslationsFetched) {
+                    return Expanded(
+                        child: Card(
+                            shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(
+                                    Radius.circular(kCardRadius))),
+                            child: DashboardDataTable(
+                                getAllTranslationsModel:
+                                    state.getAllTranslationsModel)));
+                  } else {
+                    return const SizedBox.shrink();
+                  }
+                },
+              )
+            ],
+          ),
         ));
   }
 }
