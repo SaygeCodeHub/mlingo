@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mlingo/configs/app_color.dart';
 import 'package:mlingo/configs/app_dimensions.dart';
+import 'package:mlingo/utils/globals.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hintText;
@@ -13,9 +14,11 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width:
-          MediaQuery.of(context).size.width * 0.2, // Adjust the width as needed
+      width: (MediaQuery.of(context).size.width < mobileBreakPoint)
+          ? MediaQuery.of(context).size.width
+          : MediaQuery.of(context).size.width * 0.2, // Adjust the width as needed
       child: TextField(
+        cursorColor: AppColor.xLightestBlack,
         decoration: InputDecoration(
           enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: AppColor.transparent),
@@ -27,12 +30,11 @@ class CustomTextField extends StatelessWidget {
           filled: true,
           hintText: hintText,
           hintStyle: const TextStyle(
-            fontFamily: "Archivo",
-            letterSpacing: 0.8,
-            color: AppColor.lightestBlack,
-            fontSize: 12,
-            fontWeight: FontWeight.w300
-          ),
+              fontFamily: "Archivo",
+              letterSpacing: 0.8,
+              color: AppColor.lightestBlack,
+              fontSize: 12,
+              fontWeight: FontWeight.w300),
         ),
       ),
     );

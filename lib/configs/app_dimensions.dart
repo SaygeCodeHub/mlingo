@@ -28,4 +28,3 @@ const double kleftpadding = 280;
 const double kverticalpadding = 180;
 const double krightpadding = 235;
 const double kimagepadding = 80;
-const double kloginbtnsize = 0.2;

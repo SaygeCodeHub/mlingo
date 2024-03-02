@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mlingo/configs/app_color.dart';
 import 'package:mlingo/configs/app_dimensions.dart';
+import 'package:mlingo/utils/globals.dart';
 
 class CustomPasswordField extends StatefulWidget {
   final String hintText;
@@ -20,8 +21,11 @@ class CustomPasswordFieldState extends State<CustomPasswordField> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.2,
+      width: (MediaQuery.of(context).size.width < mobileBreakPoint)
+          ? MediaQuery.of(context).size.width
+          : MediaQuery.of(context).size.width * 0.2,
       child: TextField(
+        cursorColor: AppColor.xLightestBlack,
         obscureText: _obscureText,
         decoration: InputDecoration(
           enabledBorder: const OutlineInputBorder(

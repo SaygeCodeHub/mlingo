@@ -7,7 +7,7 @@ import 'package:mlingo/bloc/translation_form/translation_form_bloc.dart';
 import 'package:mlingo/di/app_module.dart';
 import 'bloc/dashboard/dashboard_bloc.dart';
 import 'configs/app_route.dart';
-import 'package:mlingo/screens/login/registeration.dart';
+import 'package:mlingo/screens/login/registration/registeration.dart';
 Future<void> main() async {
   await _initApp();
   await _initDependencies();

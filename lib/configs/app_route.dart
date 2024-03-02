@@ -3,7 +3,7 @@ import 'package:mlingo/screens/addKey/add_key_screen.dart';
 import 'package:mlingo/screens/dashboard/dashboard_screen.dart';
 import 'package:mlingo/screens/login/login.dart';
 
-import 'package:mlingo/screens/login/registeration.dart';
+import 'package:mlingo/screens/login/registration/registeration.dart';
 
 class AppRoutes {
   static Route routes(RouteSettings settings) {
