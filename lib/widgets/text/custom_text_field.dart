@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mlingo/configs/app_color.dart';
+import 'package:mlingo/configs/app_dimensions.dart';
 
-class MyTextField extends StatelessWidget {
+class CustomTextField extends StatelessWidget {
   final String hintText;
 
-  const MyTextField({
+  const CustomTextField({
     super.key,
     required this.hintText,
   });
@@ -17,17 +18,20 @@ class MyTextField extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
           enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: AppColor.white),
-          ),
+              borderSide: BorderSide(color: AppColor.transparent),
+              borderRadius: BorderRadius.all(Radius.circular(kCardRadius))),
           focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: AppColor.darkergrey),
           ),
-          fillColor: AppColor.lightpurple,
+          fillColor: AppColor.faintBlue,
           filled: true,
           hintText: hintText,
           hintStyle: const TextStyle(
-            color: AppColor.lowpurple,
-            fontSize: 13,
+            fontFamily: "Archivo",
+            letterSpacing: 0.8,
+            color: AppColor.lightestBlack,
+            fontSize: 12,
+            fontWeight: FontWeight.w300
           ),
         ),
       ),

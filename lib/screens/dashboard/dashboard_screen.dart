@@ -24,7 +24,7 @@ class DashboardScreen extends StatelessWidget {
       appBar: AppBar(
         titleSpacing: spacingHuge,
         title: const Text("Mlingo"),
-        titleTextStyle: Theme.of(context).textTheme.mlingoDashboardTextStyle,
+        titleTextStyle: Theme.of(context).textTheme.mlingoAppBarTextStyle,
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.settings)),
           IconButton(onPressed: () {}, icon: const Icon(Icons.notifications)),

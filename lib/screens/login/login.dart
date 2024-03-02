@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mlingo/configs/app_color.dart';
-import 'package:mlingo/configs/app_dimensions.dart';
+import 'package:mlingo/configs/app_spacing.dart';
+import 'package:mlingo/configs/app_theme.dart';
 import 'package:mlingo/screens/addKey/add_key_screen.dart';
+import 'package:mlingo/screens/login/link_login.dart';
 import 'package:mlingo/screens/login/registeration.dart';
-import 'package:mlingo/widgets/text/login_button.dart';
-import 'package:mlingo/widgets/text/login_passfield.dart';
-import 'package:mlingo/widgets/text/login_textfield.dart';
+import 'package:mlingo/widgets/text/custom_button.dart';
+import 'package:mlingo/widgets/text/custom_password_field.dart';
+import 'package:mlingo/widgets/text/custom_text_field.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -15,146 +17,81 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(kDashboardHorizontalPadding),
-        child: Row(
-          children: [
-            const Column(
-              children: [
-                Text(
-                  "Your Logo",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: kregisterpadding, vertical: kverticalpadding),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Sign Up to ',
-                    style: TextStyle(
-                      fontSize: ksignupfont,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const Text(
-                    'Lorem lpsum is simply',
-                    style: TextStyle(
-                      fontSize: ksizebox,
-                      fontWeight: FontWeight.w200,
-                    ),
-                  ),
-                  const SizedBox(height: ksizebox),
-                  const Text("if you haven't Registed yet "),
-                  Row(
-                    children: [
-                      const Text('you can '),
+      backgroundColor: AppColor.white,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        titleSpacing: spacingHuge,
+        title: const Text("Mlingo"),
+        titleTextStyle: Theme.of(context).textTheme.mlingoAppBarTextStyle,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(spacingLarge),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text('Welcome to',
+                        style: Theme.of(context).textTheme.largestTextStyle),
+                    const SizedBox(height: spacingStandard),
+                    Text('Mlingo',
+                        style: Theme.of(context).textTheme.largeTextStyle),
+                    const SizedBox(height: spacingStandard),
+                    Text("If you don't have an account yet",
+                        style: Theme.of(context).textTheme.smallTextStyle),
+                    Row(children: [
+                      Text('you can',
+                          style: Theme.of(context).textTheme.smallTextStyle),
                       TextButton(
                         onPressed: () {
                           Navigator.pushNamed(context, Registration.routeName);
                         },
-                        child: const Text(
-                          'Register here',
-                          style: TextStyle(
-                            color: AppColor.deepPurple,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: ksizeboxx),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.fromLTRB(kleftpadding, kCircularRadius,
-                      krightpadding, kCircularRadius),
-                  child: Text(
-                    "Sign in",
-                    style: TextStyle(
-                      fontSize: kDashboardHorizontalPadding,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: kDashboardHorizontalPadding),
-                const MyTextField(
-                  hintText: 'Enter email or User Name',
-                ),
-                const SizedBox(height: kDashboardHorizontalPadding),
-                const MyPassField(
-                  hintText: ' password',
-                ),
-                const SizedBox(
-                  height: kDashboardHorizontalPadding,
-                ),
-                const Text(
-                  'Forgot password ?',
-                  style: TextStyle(
-                    color: AppColor.boldGrey,
-                    fontSize: 11,
-                  ),
-                ),
-                const SizedBox(height: ksizebox),
-                MyButton(
-                  hintText: 'Login',
-                  onPressed: () {
-                    Navigator.pushNamed(context, AddKeyScreen.routeName);
-                  },
-                ),
-                const SizedBox(height: kDashboardHorizontalPadding),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: kAddButtonWidth),
-                  child: Text(
-                    'or continue with',
-                    style: TextStyle(color: AppColor.boldGrey),
-                  ),
-                ),
-                const SizedBox(height: ksizeboxxx),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: kimagepadding),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                        child: Text('Register here',
+                            style:
+                                Theme.of(context).textTheme.textButtonTextStyle),
+                      )
+                    ]),
+                  ]),
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding: EdgeInsets.all(kGeneralSizedBoxHeight),
-                        child: Image(
-                          image: AssetImage('assets/images/face.png'),
-                          width: ksignupfont,
-                          height: ksignupfont,
-                        ),
+                      Text("Sign In",
+                          style: Theme.of(context).textTheme.mediumBoldTextStyle),
+                      const SizedBox(height: spacingStandard),
+                      const CustomTextField(
+                        hintText: 'Enter Email or UserName',
                       ),
-                      Padding(
-                        padding: EdgeInsets.all(kVerticalPadding),
-                        child: Image(
-                          image: AssetImage('assets/images/apple.png'),
-                          width: ksizebox,
-                          height: ksizebox,
-                        ),
+                      const SizedBox(height: spacingStandard),
+                      const CustomPasswordField(
+                        hintText: ' Password',
                       ),
-                      Padding(
-                        padding: EdgeInsets.all(kGeneralSizedBoxHeight),
-                        child: Image(
-                          image: AssetImage('assets/images/google.png'),
-                          width: ksignupfont,
-                          height: ksignupfont,
-                        ),
+                      const SizedBox(height: spacingStandard),
+                      Text(
+                        'Forgot Password ?',
+                        style: Theme.of(context).textTheme.xSmallTextStyle,
                       ),
+                      const SizedBox(height: spacingLarge),
+                      CustomButton(
+                        hintText: 'Login',
+                        onPressed: () {
+                          Navigator.pushNamed(context, AddKeyScreen.routeName);
+                        },
+                      )
                     ],
                   ),
-                )
-              ],
-            ),
-          ],
+                  const LinkLogin(),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

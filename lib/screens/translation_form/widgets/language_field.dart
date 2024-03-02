@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mlingo/configs/app_theme.dart';
-import '../../../configs/app_color.dart';
 import '../../../configs/app_dimensions.dart';
 
 typedef StringCallBack = Function(String textField);

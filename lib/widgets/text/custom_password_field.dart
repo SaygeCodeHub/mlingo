@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:mlingo/configs/app_color.dart';
+import 'package:mlingo/configs/app_dimensions.dart';
 
-class MyPassField extends StatefulWidget {
+class CustomPasswordField extends StatefulWidget {
   final String hintText;
 
-  const MyPassField({
+  const CustomPasswordField({
     super.key,
     required this.hintText,
   });
 
   @override
-  MyPassFieldState createState() => MyPassFieldState();
+  CustomPasswordFieldState createState() => CustomPasswordFieldState();
 }
 
-class MyPassFieldState extends State<MyPassField> {
+class CustomPasswordFieldState extends State<CustomPasswordField> {
   bool _obscureText = true;
 
   @override
@@ -24,21 +25,23 @@ class MyPassFieldState extends State<MyPassField> {
         obscureText: _obscureText,
         decoration: InputDecoration(
           enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white),
-          ),
+              borderSide: BorderSide(color: Colors.transparent),
+              borderRadius: BorderRadius.all(Radius.circular(kCardRadius))),
           focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: AppColor.darkergrey),
-          ), fillColor: AppColor.lightpurple,
+              borderSide: BorderSide(color: AppColor.darkergrey)),
+          fillColor: AppColor.faintBlue,
           filled: true,
           hintText: widget.hintText,
           hintStyle: const TextStyle(
-            color: AppColor.lowpurple,
-            fontSize: 13,
-          ),
+              fontFamily: "Archivo",
+              letterSpacing: 0.8,
+              color: AppColor.lightestBlack,
+              fontSize: 12,
+              fontWeight: FontWeight.w300),
           suffixIcon: IconButton(
             icon: Icon(
               _obscureText ? Icons.visibility : Icons.visibility_off,
-              color: _obscureText ? Colors.grey : Colors.blue,
+              color: _obscureText ? AppColor.xLightestBlack : Colors.grey,
             ),
             onPressed: () {
               setState(() {

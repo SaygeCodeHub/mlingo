@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:mlingo/configs/app_color.dart';
 import 'package:mlingo/configs/app_dimensions.dart';
 
-class MyButton extends StatelessWidget {
+class CustomButton extends StatelessWidget {
   final String hintText;
   final VoidCallback? onPressed;
 
-  const MyButton({
+  const CustomButton({
     super.key,
     required this.hintText,
     this.onPressed,
@@ -20,8 +20,8 @@ class MyButton extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.all(kDashboardHorizontalPadding),
-          backgroundColor: AppColor.deepPurple,
-          shadowColor: AppColor.deepPurple,
+          backgroundColor: AppColor.xDeepBlue,
+          shadowColor: AppColor.xDeepBlue,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(kVerticalPadding),
           ),

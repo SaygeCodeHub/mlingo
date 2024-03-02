@@ -174,7 +174,7 @@ extension AppTextTheme on TextTheme {
         color: AppColor.darkGrey);
   }
 
-  TextStyle get mlingoDashboardTextStyle {
+  TextStyle get mlingoAppBarTextStyle {
     return const TextStyle(
         fontFamily: "Archivo",
         fontWeight: FontWeight.w700,
@@ -189,5 +189,49 @@ extension AppTextTheme on TextTheme {
 
   TextStyle get keyBriefStyle {
     return const TextStyle(fontSize: 15, color: AppColor.blackLight);
+  }
+
+  TextStyle get largestTextStyle {
+    return const TextStyle(
+        fontFamily: "Archivo",
+        fontWeight: FontWeight.bold,
+        fontSize: 40,
+        color: AppColor.black);
+  }
+
+  TextStyle get largeTextStyle {
+    return const TextStyle(
+        fontFamily: "Archivo",
+        fontWeight: FontWeight.w600,
+        fontSize: 30,
+        color: AppColor.black);
+  }
+
+  TextStyle get smallTextStyle {
+    return const TextStyle(
+        fontFamily: "Archivo",
+        fontWeight: FontWeight.w500,
+        color: AppColor.lighterBlack);
+  }
+
+  TextStyle get textButtonTextStyle {
+    return const TextStyle(
+        fontFamily: "Archivo",
+        fontWeight: FontWeight.bold,
+        color: AppColor.xDeepBlue);
+  }
+
+  TextStyle get mediumBoldTextStyle {
+    return const TextStyle(
+        fontFamily: "Archivo", fontSize: 20, fontWeight: FontWeight.bold);
+  }
+
+  TextStyle get xSmallTextStyle {
+    return const TextStyle(
+        fontFamily: "Archivo",
+        letterSpacing: 0.8,
+        color: AppColor.boldGrey,
+        fontSize: 12,
+        fontWeight: FontWeight.w300);
   }
 }
